@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&display=swap');
+
+body {
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+a.navbar-brand {
+    color: white;
+    display: inline-block;
+}
+
+span.logo {
+    background: #655bff;
+    padding: 10px 25px;
+    background: #655bff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 15px;
+}
+
+span.logo-text-2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #655bff;
+
+}
+
+li.profile-1 a {
+    margin-left: 26px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #655bff !important;
+}
