@@ -110,11 +110,16 @@ const displayNews = (newses) => {
 }
 
 const loadDetails = async (news_id) => {
-    const url = `https://openapi.programming-hero.com/api/news/${news_id}`
-    const res = await fetch(url);
-    const data = await res.json()
-    displayNewsDetails(data.data)
-    console.log(data.data)
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+        const res = await fetch(url);
+        const data = await res.json()
+        displayNewsDetails(data.data)
+
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 const displayNewsDetails = newsDetails => {
