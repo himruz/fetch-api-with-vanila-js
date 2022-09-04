@@ -44,7 +44,10 @@ const displayNews = (newses) => {
         heading.innerText = `No Items Found`
     }
 
+
+
     newses.forEach(news => {
+
         const createNewsDiv = document.createElement('div');
         createNewsDiv.classList.add('card', 'mb-5', 'p-3', 'shadow', 'mt-5');
         createNewsDiv.style.maxWidth = '1000px';
