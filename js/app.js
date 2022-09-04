@@ -44,7 +44,7 @@ const displayNews = (newses) => {
         heading.innerText = `No Items Found`
     }
 
-
+    console.log(newses)
 
     newses.forEach(news => {
 
@@ -68,8 +68,8 @@ const displayNews = (newses) => {
                             height="24" alt="">
                     </div>
                     <div class="author-name">
-                        <p>${news.author.name}</p>
-                        <p>${news.author.published_date}</p>
+                        <p>${news.author.name ? news.author.name : 'No Data Found'}</p>
+                        <p>${news.author.published_date ? news.author.published_date : 'No Storage  Found'}</p>
                     </div>
                 </div>
                 <div class="news-view d-flex">
@@ -77,7 +77,7 @@ const displayNews = (newses) => {
                         <span><i class="fa-regular fa-eye"></i></span>
                     </div>
                     <div class="view-count">
-                        <p>${news.total_view}total_view</p>
+                        <p>${news.total_view ? news.total_view : 'No data found'}</p>
                     </div>
                 </div>
                 <div class="news-ratings">
@@ -103,7 +103,7 @@ const displayNews = (newses) => {
 }
 
 
-loadCategoryName();
+loadCategoryName('');
 
 
 

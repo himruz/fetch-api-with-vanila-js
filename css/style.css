@@ -30,6 +30,10 @@ span.logo-text-2 {
 
 }
 
+.spinner-color {
+    color: #8d79fb !important;
+}
+
 li.profile-1 a {
     margin-left: 26px;
     font-weight: 600;
