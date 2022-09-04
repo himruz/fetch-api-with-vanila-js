@@ -1,10 +1,15 @@
 // load category name 
 
 const loadCategoryName = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCategory(data.data.news_category);
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/categories`
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCategory(data.data.news_category);
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 // display category name 
 const displayCategory = (categories) => {
@@ -21,10 +26,16 @@ const displayCategory = (categories) => {
 // load news on diffirent category
 
 const loadNews = async (category_id) => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNews(data.data)
+    try {
+        toggleSpinner(true);
+        const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNews(data.data)
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 // display news on diffirent category
@@ -99,11 +110,20 @@ const displayNews = (newses) => {
         `
         cardParent.appendChild(createNewsDiv);
     });
-
+    toggleSpinner(false);
 }
 
+const toggleSpinner = isLoading => {
+    const loadingSection = document.getElementById('loader');
+    if (isLoading) {
+        loadingSection.classList.remove('d-none')
+    } else {
+        loadingSection.classList.add('d-none')
+    }
+}
 
 loadCategoryName('');
+
 
 
 
