@@ -55,10 +55,7 @@ const displayNews = (newses) => {
         heading.innerText = `No Items Found`
     }
 
-    console.log(newses)
-
     newses.forEach(news => {
-
         const createNewsDiv = document.createElement('div');
         createNewsDiv.classList.add('card', 'mb-5', 'p-3', 'shadow', 'mt-5');
         createNewsDiv.style.maxWidth = '1000px';
@@ -99,7 +96,7 @@ const displayNews = (newses) => {
                     <span><i class="fa-solid fa-star"></i></span>
                 </div>
                 <div class="click-details">
-                    <button type="button" class="click-details" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onclick="loadDetails('${news._id}')" type="button" class="click-details" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
                 </div>
@@ -112,6 +109,24 @@ const displayNews = (newses) => {
     });
     toggleSpinner(false);
 }
+
+const loadDetails = async (news_id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+    const res = await fetch(url);
+    const data = await res.json()
+    console.log(data)
+}
+
+// const displayNewsDetails = newsDetails => {
+//     const phoneTitle = document.getElementById('phoneDetailsModalLabel');
+//     phoneTitle.innerText = phoneDetails.name;
+//     const phoneDesc = document.getElementById('phone-desc');
+//     phoneDesc.innerHTML = `
+//         <p>Relase Date : ${phoneDetails.releaseDate ? phoneDetails.releaseDate : 'No Relase Date Found'}</p>
+//         <p>Storage : ${phoneDetails.mainFeatures ? phoneDetails.mainFeatures.storage : 'No Storage  Found'}</p>
+//     `
+
+// }
 
 const toggleSpinner = isLoading => {
     const loadingSection = document.getElementById('loader');
