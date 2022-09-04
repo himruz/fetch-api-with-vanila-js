@@ -135,3 +135,12 @@ footer h5 {
     background: #8d79fb;
     display: inline-block;
 }
+
+section.faq {
+    height: 75vh;
+}
+
+
+.accordion {
+    margin-top: 80px;
+}
