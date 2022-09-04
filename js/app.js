@@ -39,7 +39,6 @@ const loadNews = async (category_id) => {
 }
 
 // display news on diffirent category
-// style="max-width: 1000px;"
 
 const displayNews = (newses) => {
     const cardParent = document.getElementById('card-parent');
@@ -114,19 +113,21 @@ const loadDetails = async (news_id) => {
     const url = `https://openapi.programming-hero.com/api/news/${news_id}`
     const res = await fetch(url);
     const data = await res.json()
-    console.log(data)
+    displayNewsDetails(data.data)
+    console.log(data.data)
 }
 
-// const displayNewsDetails = newsDetails => {
-//     const phoneTitle = document.getElementById('phoneDetailsModalLabel');
-//     phoneTitle.innerText = phoneDetails.name;
-//     const phoneDesc = document.getElementById('phone-desc');
-//     phoneDesc.innerHTML = `
-//         <p>Relase Date : ${phoneDetails.releaseDate ? phoneDetails.releaseDate : 'No Relase Date Found'}</p>
-//         <p>Storage : ${phoneDetails.mainFeatures ? phoneDetails.mainFeatures.storage : 'No Storage  Found'}</p>
-//     `
+const displayNewsDetails = newsDetails => {
+    const newsTitle = document.getElementById('exampleModalLabel');
+    newsTitle.innerText = newsDetails[0].title;
+    const newsImg = document.getElementById('news-img');
+    newsImg.classList.add('img-fluid');
+    newsImg.src = newsDetails[0].image_url;
+    const newsDesc = document.getElementById('desc');
+    newsDesc.innerText = newsDetails[0].details;
 
-// }
+
+}
 
 const toggleSpinner = isLoading => {
     const loadingSection = document.getElementById('loader');
@@ -139,31 +140,3 @@ const toggleSpinner = isLoading => {
 
 loadCategoryName('');
 
-
-
-
-
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Breaking News</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Regular News</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">International News</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Sports</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Entartaiment</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Culture</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">Arts</a>
-                    // </li>
-                    // <li class="nav-item menu-items ms-3">
-                    //     <a class="nav-link" href="#">All News</a>
-                    // </li>       
