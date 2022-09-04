@@ -4,15 +4,20 @@ body {
     font-family: 'Roboto Flex', sans-serif;
 }
 
+
+p {
+    margin-bottom: 0;
+}
+
 a.navbar-brand {
     color: white;
     display: inline-block;
 }
 
 span.logo {
-    background: #655bff;
+    background: #8d79fb;
     padding: 10px 25px;
-    background: #655bff;
+    background: #8d79fb;
     font-size: 1.5rem;
     font-weight: 600;
     border-radius: 15px;
@@ -21,7 +26,7 @@ span.logo {
 span.logo-text-2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #655bff;
+    color: #8d79fb;
 
 }
 
@@ -29,7 +34,7 @@ li.profile-1 a {
     margin-left: 26px;
     font-weight: 600;
     font-size: 1rem;
-    color: #675cff !important;
+    color: #8d79fb !important;
 }
 
 li.menu-items a {
@@ -76,25 +81,53 @@ li.menu-items a {
 }
 
 .pick {
-    background: #675cff;
-    border: #675cff;
+    background: #8d79fb;
+    border: #8d79fb;
     font-size: 1.2rem;
 }
 
 .pick:hover {
     background: #fff;
-    color: #675cff;
-    border: #675cff;
+    color: #8d79fb;
+    border: #8d79fb;
 }
 
 .trending {
-    border-color: #675cff;
+    border-color: #8d79fb;
     font-size: 1.2rem;
-    color: #675cff;
+    color: #8d79fb;
 }
 
 .trending:hover {
-    background: #675cff;
-    border: #675cff;
+    background: #8d79fb;
+    border: #8d79fb;
     font-size: 1.2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+}
+
+h5.card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.click-details i {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8d79fb;
+}
+
+
+footer h5 {
+    color: #6e6e6e;
+}
+
+.nav-link:focus {
+    color: rgb(255 255 255);
+    background: #8d79fb;
+    display: inline-block;
 }
